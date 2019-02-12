@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom";
 import React, { Component } from "react";
-import Wrapper from '../Wrapper.js';
-
+import Wrapper from "../Wrapper.js";
 
 import "../App.css";
 
@@ -10,8 +9,7 @@ class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: "",
-      
+      password: ""
     };
     this.handleUsername = this.handleUsername.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
@@ -28,24 +26,27 @@ class Login extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({signedUp : true})
+    this.setState({ signedUp: true });
     let c = JSON.stringify({
       username: this.state.username,
       password: this.state.password
     });
-    fetch("http://165.227.42.84:80/login", { 
-      method: "POST", body: c })
-    .then(function(x){
-      return x.text();
+    fetch("http://165.227.42.84:80/login", {
+      method: "POST",
+      body: c
     })
-    .then(responseBody => {
-      let body = JSON.parse(responseBody);
-      if (!body.success) {
-        alert("login failed");
-        return;
-      }
-      this.props.dispatch({ type: "login-success"})
-    })
+      .then(function(x) {
+        return x.text();
+      })
+      .then(response => {
+        let body = JSON.parse(response);
+        if (!body.success) {
+          alert("login failed");
+          return;
+        }
+        alert("login success");
+        // this.props.dispatch({ type: "login-success"})
+      });
   }
 
   render() {
@@ -56,24 +57,32 @@ class Login extends Component {
             <h5>Username</h5>
           </div>
           <div>
-            <input style={{ width: "100%" }} type="text" onChange={this.handleUsername} />
+            <input
+              style={{ width: "100%" }}
+              type="text"
+              onChange={this.handleUsername}
+            />
           </div>
           <div>
             <h5>Password</h5>
           </div>
           <div>
-            <input style={{ width: "100%" }} type="text" onChange={this.handlePassword} />
+            <input
+              style={{ width: "100%" }}
+              type="text"
+              onChange={this.handlePassword}
+            />
           </div>
           <div>
             <input
-              style={{ width: "100%", }}
+              style={{ width: "100%" }}
               className="btn btn-primary"
               type="submit"
               value="Login"
             />
           </div>
         </form>
-       </Wrapper>
+      </Wrapper>
     );
   }
 }

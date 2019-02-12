@@ -8,7 +8,7 @@ const Navbar = () => {
         <a className="brand-logo">Book'Bae</a>
         <ul className="right">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/Home">Home</Link>
           </li>
           <li>
             <NavLink to="/about">About</NavLink>
