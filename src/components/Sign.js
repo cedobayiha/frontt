@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import Wrapper from '../Wrapper.js';
 
 
@@ -33,8 +34,20 @@ class Sign extends Component {
       username: this.state.username,
       password: this.state.password
     });
-    fetch("http://165.227.42.84:80/signup", { method: "POST", body: c });
-  }
+    fetch("http://165.227.42.84:80/signup", { method: "POST", body: c })
+    .then(function(x) {
+      return x.text();
+    })
+    .then(response => {
+      let body = JSON.parse(response);
+      if (body.status === true) {
+        this.props.history.push("/login");
+      }
+      else{
+        return this.props.history.push("/contact");
+      }
+  })
+}
 
   render() {
     return (
@@ -66,4 +79,4 @@ class Sign extends Component {
   }
 }
 
-export default Sign;
+export default withRouter(Sign);

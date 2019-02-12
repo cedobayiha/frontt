@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom";
 import React, { Component } from "react";
+import Home from "./Home";
 import Wrapper from "../Wrapper.js";
-
+import { withRouter } from "react-router-dom";
 import "../App.css";
 
 class Login extends Component {
@@ -40,11 +41,15 @@ class Login extends Component {
       })
       .then(response => {
         let body = JSON.parse(response);
-        if (!body.success) {
-          alert("login failed");
-          return;
+        if (body.status === true) {
+          this.props.history.push("/home");
         }
-        alert("login success");
+
+        // if (!body.success) {
+        //   alert("login failed");
+        //   return;
+        // }
+        // alert(body);
         // this.props.dispatch({ type: "login-success"})
       });
   }
@@ -87,4 +92,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

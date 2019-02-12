@@ -11,9 +11,6 @@ let reducer = function(state, action) {
   if (action.type === "login-success") {
     return { ...state, loggedIn: true };
   }
-  if (action.type === "set-message") {
-    return { ...state, message: action.message };
-  }
   return state;
 };
 

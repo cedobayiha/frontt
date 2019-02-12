@@ -19,7 +19,8 @@ export default props => (
         style={{
           maxWidth: "400px",
           minWidth: "40px",
-          margin: "auto"
+          margin: "auto",
+          // backgroundColor: "red"
         }}
       >
         {props.children}
