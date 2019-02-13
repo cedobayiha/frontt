@@ -51,13 +51,7 @@ class Post extends Component {
     formData.append("product-image", this.state.selectedFile);
     formData.append("description", this.state.description);
 
-    let c = JSON.stringify({
-      price: this.state.price,
-      description: this.state.description,
-      title: this.state.title,
-      category: this.state.category
-    });
-    fetch("http://165.227.42.84:80/post", { method: "POST", body: c });
+    fetch("http://165.227.42.84:80/post", { method: "POST", body: formData });
   }
   render() {
     return (
