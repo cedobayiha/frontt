@@ -8,16 +8,24 @@ class Post extends Component {
       title: "",
       description: "",
       category: "",
-      price: ""
+      price: "",
+      selectedFile: null
     };
+
     this.handlePrice = this.handlePrice.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
-    this.handleCategory = this.handleCategory.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleCategory = this.handleCategory.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileChange = this.fileChange.bind(this);
   }
   handlePrice(event) {
     this.setState({ price: event.target.value });
+  }
+
+  fileChange(event) {
+    let file = event.target.files[0];
+    this.setState({ selectedFile: file });
   }
 
   handleTitle(event) {
@@ -27,13 +35,22 @@ class Post extends Component {
   handleDescription(event) {
     this.setState({ description: event.target.value });
   }
-  handleCategory(event){
-    this.setState({category: event.target.value})
+  handleCategory(event) {
+    this.setState({ category: event.target.value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.setState({ signedUp: true });
+
+    let formData = new FormData();
+
+    formData.append("title", this.state.title);
+    formData.append("price", this.state.price);
+    formData.append("category", this.state.category);
+    formData.append("product-image", this.state.selectedFile);
+    formData.append("description", this.state.description);
+
     let c = JSON.stringify({
       price: this.state.price,
       description: this.state.description,
@@ -64,16 +81,26 @@ class Post extends Component {
             type="text"
           />
           <div>
-            <label style={{ fontWeight: "bold" }}><h6>Select Category</h6></label>
-          <select style={{ display: "block", width: "60%", border: "1px solid" }} onChange={this.handleCategory}>
-            <option value="Accounting">Accounting</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Poli Sci">Poli sci</option>
-            <option value="finance">Finance</option>
-          </select>
+            <label style={{ fontWeight: "bold" }}>
+              <h6>Select Category</h6>
+            </label>
+            <select
+              style={{ display: "block", width: "60%", border: "1px solid" }}
+              onChange={this.handleCategory}
+            >
+              <option value="Accounting">Accounting</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Poli Sci">Poli sci</option>
+              <option value="finance">Finance</option>
+            </select>
+          </div>
+          <div style={{ marginTop: "19px", marginBottom: "7px" }}>
+            <input type="file" onChange={this.fileChange} />
           </div>
           <div>
-            <label style={{ fontWeight: "bold" }}><h5>Description</h5></label>
+            <label style={{ fontWeight: "bold" }}>
+              <h5>Description</h5>
+            </label>
           </div>
           <div>
             <textarea
