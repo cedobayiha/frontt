@@ -40,33 +40,36 @@ class Search extends Component {
 
   render() {
     return (
-      <div
-        className="search-box"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "200px",
-          marginTop: "2px",
-          paddingBottom: "5px",
-          borderRadius: "10px",
-          border: "none",
-          backgroundColor: "beige"
-        }}
-      >
-      <form onSubmit={this.handleSubmit} style={{ display: "flex", backgroundColor: "beige"}}>
+      // <div
+      //   className= "blue-grey darken-1"
+      //   style={{
+      //     display: "flex",
+      //     // justifyContent: "space-between",
+      //     // width: "200px",
+      //     // marginTop: "2px",
+      //     paddingBottom: "5px",
+      //     borderRadius: "10px",
+      //     border: "none",
+      //     Color: "#fff"
+      //   }}
+      // >
+      <div className= "blue-grey darken-3" onSubmit={this.handleSubmit} style={{ display: "flex", backgroundColor: "beige"}}>
         <input
+          className= "blue-grey darken-3"
           onChange={this.handleTitle}
           type="text"
           placeholder="search by title"
-          style={{ backgroundColor: "beige", display: "flex", width: "130px" }}
+          style={{ color: "white", display: "flex", width: "130px", textAlign: "left", paddingLeft: "4px" }}
         />
-        <input
+        <input 
+          
+          className= "blue-grey darken-3"
           type="submit"
           value="Search"
-          style={{width: "55px", border: "none", backgroundColor: "beige" }}
+          style={{width: "60px", border: "none", color: "white" }}
         />
-      </form>
       </div>
+      //</div>
     );
   }
 }
