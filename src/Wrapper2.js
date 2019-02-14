@@ -21,6 +21,7 @@ export default props => (
         style={{
           maxWidth: "390px",
           minWidth: "40px",
+          maxHeight: "",
           margin: "auto"
 
         }}
@@ -112,7 +113,7 @@ export default props => (
       </li>
     </ul>
 
-     <ul style={{
+     {/* <ul style={{
         width: "100%",
         display: "flex",
         justifyContent: "space-around",
@@ -208,6 +209,6 @@ export default props => (
       >
         {props.children}
       </li>
-      </ul>
+      </ul> */}
   </div>
 );
