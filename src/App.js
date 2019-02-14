@@ -41,7 +41,7 @@ class App extends Component {
     return <Login />
   }
 
-  render
+  
 
   render() {
 

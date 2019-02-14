@@ -13,9 +13,9 @@ class PostButton extends Component {
 }
   render(){
   return(
-    <div style={{display: "flex", float: "right", paddingBottom:"3px"}}>
+    <div  style={{display: "flex", float: "right", paddingBottom:"3px"}}>
     <form onSubmit={this.handleSubmit} >
-    <input type="submit"  style={{display: "block", backgroundColor: "teal", padding: "13px", borderRadius: "5px"}} value="Post Ad" />
+    <input className= "blue-grey darken-2" type="submit"  style={{display: "block", color:"#fff", padding: "13px", borderRadius: "5px"}} value="Post Ad" />
     </form>
     </div>
   )

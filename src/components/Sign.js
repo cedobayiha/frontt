@@ -18,6 +18,10 @@ class Sign extends Component {
     this.handlePassword = this.handlePassword.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
+  goToLog = () => {
+    this.props.history.push("/login")
+  }
 
   handleUsername(event) {
     this.setState({ username: event.target.value });
@@ -44,7 +48,7 @@ class Sign extends Component {
         this.props.history.push("/login");
       }
       else{
-        return this.props.history.push("/contact");
+        return this.props.history.push("/login");
       }
   })
 }
@@ -74,6 +78,10 @@ class Sign extends Component {
             />
           </div>
         </form>
+        <div>
+          <h5>You already have a profile? <span><button onClick={this.goToLog}className= "blue-grey darken-2" type="submit">Log in</button></span></h5>
+          
+        </div>
        </Wrapper>
     );
   }

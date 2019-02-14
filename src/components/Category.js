@@ -83,9 +83,9 @@ class Category extends Component {
          
         }}
       >
-        <select
+        <select className= "blue-grey darken-2"
           onChange={this.handleSubCat}
-          style={{ display: "block", width: "150px", backgroundColor: "teal" }}
+          style={{ display: "block", width: "150px", color: "#fff" }}
         >
           <option value="Choose Category" selected disabled>
             Choose Category
