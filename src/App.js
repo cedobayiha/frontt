@@ -14,6 +14,24 @@ import PostButton from "./components/PostButton"
 import "./App.css";
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      redirect: false,
+      navClass: false,
+      showLinks: false
+    }
+  }
+  clickNav = e => {
+    this.setState({
+      navClass: !this.state.navClass,
+      showLinks: !this.state.showLinks
+    });
+  };
+
+  handleClick = () => {
+    this.setState({ navClass: false, showLinks: false });
+  };
 
   renderSignup = () => {
     return <Sign />
@@ -31,10 +49,13 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Navbar />
-          <div style={{display: "flex", justifyContent: "flex-end", alignItems: "strech", marginTop: "8.5px"}}>
-          <Category />
-          <PostButton />
-          </div>
+         <div style={{display: "flex", justifyContent: "flex-end", alignItems: "strech", marginTop: "8.5px"}}>
+         
+            <Category />
+            <PostButton />
+            </div>
+          
+          
           <Route path="/Home" exact={true} component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />

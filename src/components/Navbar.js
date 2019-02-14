@@ -12,7 +12,9 @@ const Navbar = () => {
           Book'Bae
         </a>
         </div>
-        <div style={{display: "flex", justifyContent: "space"}}>
+        
+        <div style={{display: "flex", justifyContent: "space-between"}}>
+        <div ><Search /></div>
         <ul >
           <li>
             <NavLink to="/about">About</NavLink>
@@ -29,7 +31,7 @@ const Navbar = () => {
           
         </ul>
         </div>
-        <div ><Search /></div>
+        
     </nav>
   );
 };

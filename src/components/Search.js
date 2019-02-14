@@ -58,8 +58,8 @@ class Search extends Component {
           className= "blue-grey darken-3"
           onChange={this.handleTitle}
           type="text"
-          placeholder="search by title"
-          style={{ color: "white", display: "flex", width: "160px", textAlign: "left", paddingLeft: "4px" }}
+          placeholder="Search..."
+          style={{ color: "white", display: "flex", width: "175px", textAlign: "left", paddingLeft: "4px" }}
         />
         <input 
           
@@ -67,7 +67,7 @@ class Search extends Component {
           type="submit"
           value="Search"
           style={{width: "60px", border: "none", color: "white", height: "7vh" }}
-        />
+        /><i class="material-icons">search</i>
       </div>
       //</div>
     );
