@@ -59,14 +59,14 @@ class Search extends Component {
           onChange={this.handleTitle}
           type="text"
           placeholder="search by title"
-          style={{ color: "white", display: "flex", width: "130px", textAlign: "left", paddingLeft: "4px" }}
+          style={{ color: "white", display: "flex", width: "160px", textAlign: "left", paddingLeft: "4px" }}
         />
         <input 
           
           className= "blue-grey darken-3"
           type="submit"
           value="Search"
-          style={{width: "60px", border: "none", color: "white" }}
+          style={{width: "60px", border: "none", color: "white", height: "7vh" }}
         />
       </div>
       //</div>
