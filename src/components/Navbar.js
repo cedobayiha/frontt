@@ -1,16 +1,16 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+// import "./Navbar.css";
 
 
 const Navbar = () => {
   return (
-    <nav className="nav-wrapper blue-grey darken-4">
+    <nav className= "blue-grey darken-4">
       <div className="container">
-        <a className="brand-logo">Book'Bae</a>
+        <a className="brand-logo" href="http://localhost:3002">
+          Book'Bae
+        </a>
         <ul className="right">
-          <li>
-            <Link to="/Home">Home</Link>
-          </li>
           <li>
             <NavLink to="/about">About</NavLink>
           </li>

@@ -1,7 +1,10 @@
-import React from "react"
+import React from "react";
+
+
 
 const Home = () => {
   return(
+    
     <div className="container">
     <h4 className="center">Home</h4>
     <p>some text</p>

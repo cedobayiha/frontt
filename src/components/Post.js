@@ -51,7 +51,7 @@ class Post extends Component {
     formData.append("product-image", this.state.selectedFile);
     formData.append("description", this.state.description);
 
-    fetch("http://165.227.42.84:80/post", { method: "POST", body: formData });
+    fetch("http://165.227.42.84:80/accounting", { method: "POST", body: formData });
   }
   render() {
     return (
