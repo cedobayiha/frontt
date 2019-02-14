@@ -10,7 +10,8 @@ class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      signedUp: false
     };
     this.handleUsername = this.handleUsername.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
@@ -74,7 +75,7 @@ class Login extends Component {
           <div>
             <input
               style={{ width: "100%" }}
-              type="text"
+              type="password"
               onChange={this.handlePassword}
             />
           </div>

@@ -76,14 +76,16 @@ class Category extends Component {
         className="search-box"
         style={{
           display: "flex",
-          width: "600px",
-          marginTop: "10px",
-          borderRadius: "5px"
+          width: "160px",
+          
+          borderRadius: "5px",
+          float: "left",
+         
         }}
       >
         <select
           onChange={this.handleSubCat}
-          style={{ display: "block", width: "150px", backgroundColor: "beige" }}
+          style={{ display: "block", width: "150px", backgroundColor: "teal" }}
         >
           <option value="Choose Category" selected disabled>
             Choose Category

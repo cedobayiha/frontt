@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Post from "./components/Post";
 import Search from "./components/Search";
 import Category from "./components/Category";
+import PostButton from "./components/PostButton"
 
 import "./App.css";
 
@@ -25,12 +26,15 @@ class App extends Component {
   render
 
   render() {
+
     return (
       <BrowserRouter>
         <div>
           <Navbar />
-          <Search />
+          <div style={{display: "flex", justifyContent: "flex-end", alignItems: "strech", marginTop: "8.5px"}}>
           <Category />
+          <PostButton />
+          </div>
           <Route path="/Home" exact={true} component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />

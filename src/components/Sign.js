@@ -63,7 +63,7 @@ class Sign extends Component {
             <h5>Password</h5>
           </div>
           <div>
-            <input style={{ width: "100%" }} type="text" onChange={this.handlePassword} />
+            <input style={{ width: "100%" }} type="password" onChange={this.handlePassword} />
           </div>
           <div>
             <input

@@ -44,24 +44,26 @@ class Search extends Component {
         className="search-box"
         style={{
           display: "flex",
-          float: "right",
-          width: "250px",
-          marginTop: "10px",
+          justifyContent: "space-between",
+          width: "200px",
+          marginTop: "2px",
+          paddingBottom: "5px",
           borderRadius: "10px",
-          border: "1px solid green"
+          border: "none",
+          backgroundColor: "beige"
         }}
       >
-      <form onSubmit={this.handleSubmit} style={{ display: "flex"}}>
+      <form onSubmit={this.handleSubmit} style={{ display: "flex", backgroundColor: "beige"}}>
         <input
           onChange={this.handleTitle}
           type="text"
           placeholder="search by title"
-          style={{ backgroundColor: "white", display: "flex" }}
+          style={{ backgroundColor: "beige", display: "flex", width: "130px" }}
         />
         <input
           type="submit"
           value="Search"
-          style={{width: 60, borderRadius: "100px", border: "none" }}
+          style={{width: "55px", border: "none", backgroundColor: "beige" }}
         />
       </form>
       </div>
