@@ -79,7 +79,7 @@ class Sign extends Component {
           </div>
         </form>
         <div>
-          <h5>You already have a profile? <span><button onClick={this.goToLog}className= "blue-grey darken-2" type="submit">Log in</button></span></h5>
+          <h5>You already have a profile? <span><button onClick={this.goToLog}className= "blue-grey darken-2" type="submit" style={{color: "#fff"}}>Log in</button></span></h5>
           
         </div>
        </Wrapper>
