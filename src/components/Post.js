@@ -81,11 +81,11 @@ class Post extends Component {
             <select
               style={{ display: "block", width: "60%", border: "1px solid" }}
               onChange={this.handleCategory}
-            >
+            > <option value="">Select</option>
               <option value="Accounting">Accounting</option>
               <option value="Marketing">Marketing</option>
               <option value="Poli Sci">Poli sci</option>
-              <option value="finance">Finance</option>
+              <option value="Finance">Finance</option>
             </select>
           </div>
           <div style={{ marginTop: "19px", marginBottom: "7px" }}>

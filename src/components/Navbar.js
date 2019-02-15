@@ -17,11 +17,9 @@ const Navbar = () => {
         <div ><Search /></div>
         <ul >
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/accounting">About</NavLink>
           </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
+          
           <li>
             <NavLink to="/sign">Register</NavLink>
           </li>

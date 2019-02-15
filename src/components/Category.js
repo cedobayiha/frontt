@@ -23,7 +23,7 @@ class Category extends Component {
     if (category === "Choose Category") {
       return alert("Please choose a category");
     } else if (category === "Accounting") {
-      fetch("http://165.227.42.84:80/accounting", { method: "POST", body: c })
+      fetch("http://165.227.42.84:80/getitem?category=accounting", { method: "GET", body: c })
         .then(function(x) {
           return x.text();
         })
@@ -34,7 +34,7 @@ class Category extends Component {
           }
         });
     } else if (category === "Marketing") {
-      fetch("http://165.227.42.84:80/marketing", { method: "POST", body: c })
+      fetch("http://165.227.42.84:80/getitem?category=Marketing", { method: "GET", body: c })
         .then(function(x) {
           return x.text();
         })
@@ -45,7 +45,7 @@ class Category extends Component {
           }
         });
     } else if (category === "Finance") {
-      fetch("http://165.227.42.84:80/finance", { method: "POST", body: c })
+      fetch("http://165.227.42.84:80/getitem?category=finance", { method: "GET", body: c })
         .then(function(x) {
           return x.text();
         })
@@ -56,7 +56,7 @@ class Category extends Component {
           }
         });
     } else if (category === "Poli sci") {
-      fetch("http://165.227.42.84:80/polispi", { method: "POST", body: c })
+      fetch("http://165.227.42.84:80/getitem?category=polispi", { method: "GET", body: c })
         .then(function(x) {
           return x.text();
         })

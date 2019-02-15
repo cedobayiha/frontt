@@ -1,17 +1,51 @@
-import React from "react";
-import Wrapper2 from "../Wrapper2.js";
+import React, { Component } from "react";
 
+class Accounting extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: []
+    };
+  }
 
+  componentDidMount() {
+    return fetch("http://165.227.42.84:80/getitem", { method: "POST" })
+      .then(function(x) {
+        return x.text();
+      })
+      .then(responseBody => {
+        console.log(responseBody);
+        let parsed = JSON.parse(responseBody);
+        console.log("the parsed response", parsed);
+        this.setState({ category: parsed });
+      });
+  }
 
-const Accounting = () => {
-  return(
-    <Wrapper2>
-    
-    <div className="container">
-    <h4 className="center">Home</h4>
-    <p>some text</p>
-    </div>
-    </Wrapper2>
-  )
+  renderList = () => {
+    console.log(this.state.category);
+    return this.state.category.map(categorie => {
+      return (
+        <>
+          <img
+            alt=""
+            style={{
+              display: "block",
+              maxHeight: "360px",
+              minHeight: "150px",
+              maxWidth: "385px",
+              minWidth: "90px",
+              listStyle: "none"
+            }}
+            src={"http://165.227.42.84:80/" + categorie.image}
+          />
+        </>
+      );
+    });
+  };
+
+  render() {
+    return <div>{this.renderList()}</div>;
+  }
 }
-export default Accounting
+
+export default Accounting;

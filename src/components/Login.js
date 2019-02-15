@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import React, { Component } from "react";
 import Home from "./Home";
 // import Wrapper from "../Wrapper.js";
-import Wrapper2 from "../Wrapper2.js";
+import Wrapper from "../Wrapper.js";
 import { withRouter } from "react-router-dom";
 import "../App.css";
 
@@ -58,7 +58,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Wrapper2>
+      <Wrapper>
         <form onSubmit={this.handleSubmit}>
           <div>
             <h5>Username</h5>
@@ -89,7 +89,7 @@ class Login extends Component {
             />
           </div>
         </form>
-      </Wrapper2>
+      </Wrapper>
     );
   }
 }

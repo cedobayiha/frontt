@@ -5,7 +5,7 @@ export default props => (
     style={{
       display: "flex",
       alignItems: "center",
-      height: "100vh",
+      height: "90vh",
       // backgroundColor: "red",
       backgroundImage: "./img/watches1"
     }}
